@@ -4,6 +4,7 @@
 
 using namespace std;
 
+#if 0
 class Solution {
 public:
     unordered_set<int> whiteset;
@@ -32,7 +33,7 @@ public:
         }
 
         it = grayset.find(s);
-        if(it != grayset.end())
+        if (it != grayset.end())
         {
             result = true;
             return;
@@ -79,3 +80,6 @@ int main() {
 
     return 0;
 }
+
+#endif // 0
+
