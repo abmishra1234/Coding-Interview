@@ -2,6 +2,7 @@
 #include<unordered_set>
 using namespace std;
 
+#if 0
 struct Node
 {
     int data;
@@ -70,7 +71,7 @@ public:
             auto it = pos_pointertonode_set.find(start);
             if (it != pos_pointertonode_set.end())
             {
-                if(prev != 0)
+                if (prev != 0)
                     prev->next = 0;
                 break;
             }
@@ -112,7 +113,7 @@ int main()
             tail->next = new Node(num);
             tail = tail->next;
         }
-    
+
         int pos;
         cin >> pos;
         loopHere(head, tail, pos);
@@ -127,3 +128,5 @@ int main()
     }
     return 0;
 }
+#endif 0
+
