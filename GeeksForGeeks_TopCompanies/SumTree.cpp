@@ -7,7 +7,7 @@
 #include <sstream> 
 
 using namespace std;
-
+#if 0
 struct Node
 {
 	int data;
@@ -161,3 +161,6 @@ int main()
 	}
 	return 1;
 }
+
+#endif // 0
+
