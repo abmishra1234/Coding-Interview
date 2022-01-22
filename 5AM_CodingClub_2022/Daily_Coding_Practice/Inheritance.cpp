@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+#if 0
 // Write classes code here
 // Base class
 class Animal {
@@ -58,3 +58,4 @@ public:
 int main() {
 	// Make classes objects here
 }
+#endif // 0
