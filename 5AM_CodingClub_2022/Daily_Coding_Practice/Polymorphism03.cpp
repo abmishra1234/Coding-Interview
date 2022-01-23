@@ -1,7 +1,7 @@
 using namespace std;
 #include <iostream>
 
-//#define FORREF
+#define FORREF
 #ifndef FORREF
 
 class Account
