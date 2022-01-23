@@ -12,23 +12,9 @@ protected:
 public:
 	Account() = default;
 	Account(float bal) : balance(bal) {}
-	virtual void Withdraw(float amount)
-	{
-		cout << "Account : withdraw method called!" << endl;
-
-	}
-
-	virtual void Deposit(float amount)
-	{
-		cout << "Account : Deposit method called!" << endl;
-
-	}
-
-	virtual void printBalance()
-	{
-		cout << "Account : printBalance method called!" << endl;
-		cout << "balance : " << balance << endl;
-	}
+	virtual void Withdraw(float amount) = 0;
+	virtual void Deposit(float amount) = 0;
+	virtual void printBalance() = 0;
 };
 
 class Saving : public Account
