@@ -6,38 +6,69 @@ using namespace std;
 	The number of operands for a particular operator depends on:
 	- the kind of operator (infix, prefix, etc.)
 	- whether the operator is a method or function.
+	In perator overloading, there are rules and while doing your custom operator overloading also you have to take care of
+	these rules. #Rules are 
+	Here are some of the important rules 
+	1. We can't change the precedence of the operator
+	2. Derived classes inheirt all the operator of their base classes except the assignment operator
+	3. All operator other than the function call operator cannot have default argument
+	4. operator can be called explicitely
 */
 
-//#define FORREF
+#define FORREF
 #ifndef FORREF
 
-class A
-{
-private:
-	float balance;
-protected:
+#include <iostream>
+
+class Account {
+
 public:
-	A() = default;
-	A(float init_bal) : balance(init_bal) {}
-	// += operator should be overloaded for the current my custom class
-	A& operator += (float amount)
-	{
-		balance += amount;
+	explicit Account(double b) : balance(b) {}
+
+	Account& operator += (double b) {
+		balance += b;
 		return *this;
 	}
-	void printBalance()
-	{
-		cout << "balance = " << balance << endl;
-	}
+
+	friend Account& operator += (Account& a, Account& b);
+	friend std::ostream& operator << (std::ostream& os, const Account& a);
+
+private:
+	double balance;
+
 };
 
+Account& operator += (Account& a, Account& b) {
+	a.balance += b.balance;
+	return a;
+}
 
+std::ostream& operator << (std::ostream& os, const Account& a) {
+	os << a.balance;
+	return os;
+}
 
-int main()
-{
-	A a(1000);
-	a += 100;
-	a.printBalance(); // output should be 1100
-	return 0;
+int main() {
+
+	std::cout << std::endl;
+
+	Account acc1(100.0);
+	Account acc2(100.0);
+	Account acc3(100.0);
+
+	acc1 += 50.0;
+	acc1 += acc1;
+
+	acc2 += 50.0;
+	acc2 += acc2;
+
+	acc3.operator += (50.0);
+	//acc3.operator += (acc3);   ERROR
+
+	std::cout << "acc1: " << acc1 << std::endl;
+	std::cout << "acc2: " << acc2 << std::endl;
+
+	std::cout << std::endl;
+
 }
 #endif // FORREF
