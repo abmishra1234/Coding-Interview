@@ -13,6 +13,9 @@ using namespace std;
 	2. Derived classes inheirt all the operator of their base classes except the assignment operator
 	3. All operator other than the function call operator cannot have default argument
 	4. operator can be called explicitely
+
+	// one addition here is that there are some of the operators who are not to be overloaded
+	Operator who are not to be overloaded ---> { . , ::, ?:,  sizeof, .*, typeof }
 */
 
 #define FORREF
