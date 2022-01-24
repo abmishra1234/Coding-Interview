@@ -14,6 +14,8 @@
 #include <iostream>
 #include <vector>
 
+#define FORREF
+#ifndef FORREF
 class SumMe {
 public:
 
@@ -43,3 +45,5 @@ int main() {
 	std::cout << std::endl;
 
 }
+#endif // FORREF
+
