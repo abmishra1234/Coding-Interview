@@ -12,7 +12,7 @@ The type traits library and static_assert are a powerful pair
 
 */
 
-//#define FORREF
+#define FORREF
 
 #ifndef FORREF
 using namespace std;
